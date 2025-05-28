@@ -5,6 +5,7 @@
         static void Main(string[] args)
         {
             Crud crud = new Crud();
+            CreateJson cj = new CreateJson();
            
             //Menü
             bool ervenyes = false;
