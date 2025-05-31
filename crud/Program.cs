@@ -17,31 +17,31 @@
                 switch (gomb)
                 {
                     case 1:
-                        crud.Create();
+                        TryCatchHelper.Run(() => crud.Create());
                         Main(args);   
                         ervenyes = true;
                         break;
 
                     case 2:
-                        crud.Read();
+                        TryCatchHelper.Run(() => crud.Read());
                         Main(args);
                         ervenyes = true;
                         break;
 
                     case 3:
-                        crud.Update();
+                        TryCatchHelper.Run(() => crud.Update());
                         Main(args);
                         ervenyes = true;
                         break;
 
                     case 4:
-                        crud.Delete();
+                        TryCatchHelper.Run(() => crud.Delete());
                         Main(args);
                         ervenyes = true;
                         break;
 
                     case 5:
-                        cj.MakeJson();
+                        TryCatchHelper.Run(() => cj.MakeJson());
                         Main(args);
                         ervenyes = true;
                         break;

@@ -9,7 +9,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace crud
 {
-    internal class Crud
+    public class Crud
     {
         public void Create()
         {
@@ -19,16 +19,18 @@ namespace crud
             string json = File.ReadAllText("prod.json");
             List<Prod> lista = JsonSerializer.Deserialize<List<Prod>>(json);
 
-            int ID = InputHelper.GetValidInt("Add meg az új ID-t");
+            int ID = lista.Any() ? lista.Max(p => p.ID) + 1 : 1;
             string Brand = InputHelper.GetNonEmptyString("Add meg a termék új Márkáját:");
             string Tipus = InputHelper.GetNonEmptyString("Add meg a termék új Modelljét:");
+            int Price = InputHelper.GetValidInt("Add meg a termék árát");
 
 
             var ujProd = new Prod
             {
                 ID = ID,
                 Brand = Brand,
-                Tipus = Tipus
+                Tipus = Tipus,
+                Price = Price
             };
 
 
