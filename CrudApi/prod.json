@@ -1,0 +1,50 @@
+[
+  {
+    "ID": 1,
+    "Brand": "Dell",
+    "Tipus": "G15",
+    "Price": 199990
+  },
+  {
+    "ID": 2,
+    "Brand": "Asus",
+    "Tipus": "TUF",
+    "Price": 149990
+  },
+  {
+    "ID": 3,
+    "Brand": "HP",
+    "Tipus": "ZBook",
+    "Price": 79990
+  },
+  {
+    "ID": 4,
+    "Brand": "Lenovo",
+    "Tipus": "Gaming3",
+    "Price": 174990
+  },
+  {
+    "ID": 5,
+    "Brand": "Valami",
+    "Tipus": "Valami",
+    "Price": 0
+  },
+  {
+    "ID": 6,
+    "Brand": "string",
+    "Tipus": "string",
+    "Price": 0
+  },
+  {
+    "ID": 7,
+    "Brand": "string",
+    "Tipus": "string",
+    "Price": 0
+  },
+  {
+    "ID": 8,
+    "Brand": "string",
+    "Tipus": "string",
+    "Price": 0
+  }
+]

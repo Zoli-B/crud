@@ -76,23 +76,20 @@ namespace crud
 
             if (talalat != null)
             {
-                Console.WriteLine($"ID: {talalat.ID} - Brand: {talalat.Brand} - Tipus: {talalat.Tipus}");
+                Console.WriteLine($"ID: {talalat.ID} - Brand: {talalat.Brand} - Tipus: {talalat.Tipus} - Ár {talalat.Price}");
                 string ujBrand = InputHelper.GetNonEmptyString("Add meg a termék új Márkáját:");
                 string ujTipus = InputHelper.GetNonEmptyString("Add meg a termék új Modelljét:");
+                int ujPrice = InputHelper.GetValidInt("Add meg a termék új árát");
 
-                if (!string.IsNullOrEmpty(ujBrand) || !string.IsNullOrEmpty(ujTipus))
-                {
-                    talalat.Brand = ujBrand;
-                    talalat.Tipus = ujTipus;
 
-                    string ujJson = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
-                    File.WriteAllText("prod.json", ujJson);
-                }
-                else
-                {
-                    Console.WriteLine("Kérlek add meg a szükséges adatokat");
-                }
-            }
+                talalat.Brand = ujBrand;
+                talalat.Tipus = ujTipus;
+                talalat.Price = ujPrice;
+
+                string ujJson = JsonSerializer.Serialize(lista, new JsonSerializerOptions { WriteIndented = true });
+                File.WriteAllText("prod.json", ujJson);
+            
+        }
             else
             {
                 Console.WriteLine($"Nincs ilyen ID ({ID}), próbáld újra.");
