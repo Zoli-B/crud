@@ -50,9 +50,19 @@ namespace CrudApi.Controllers
                 string json = System.IO.File.ReadAllText("prod.json");
                 List<Prod> lista = JsonSerializer.Deserialize<List<Prod>>(json) ?? new List<Prod>();
 
+                bool check = lista.Any(p =>
+                p.Brand.Equals(prod.Brand, StringComparison.OrdinalIgnoreCase) ||
+                p.Tipus.Equals(prod.Tipus, StringComparison.OrdinalIgnoreCase));
+
+                if (check) 
+                {
+                    return Conflict("Már létezik másik termék ugyan ezzel a branddel vagy típussal");
+                }
+
                 //automatikus ID
                 int newID = lista.Any() ? lista.Max(p => p.ID) + 1 : 1;
                 prod.ID = newID;
+
 
                 //Listához adás
                 lista.Add(prod);
@@ -85,6 +95,15 @@ namespace CrudApi.Controllers
 
                 if (talalat != null)
                 {
+                    bool check = lista.Any(p =>
+                    p.ID != id && (p.Brand.Equals(updatedProd.Brand, StringComparison.OrdinalIgnoreCase) ||
+                    p.Tipus.Equals(updatedProd.Tipus, StringComparison.OrdinalIgnoreCase)));
+
+                    if (check) 
+                    {
+                        return Conflict("Már létezik másik termék ugyan ezzel a branddel vagy típussal");
+                    }
+
                     talalat.Brand = updatedProd.Brand;
                     talalat.Tipus = updatedProd.Tipus;
                     talalat.Price = updatedProd.Price;

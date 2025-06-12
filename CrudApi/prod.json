@@ -20,30 +20,6 @@
   {
     "ID": 4,
     "Brand": "Lenovo",
-    "Tipus": "Gaming3",
-    "Price": 174990
-  },
-  {
-    "ID": 5,
-    "Brand": "Valami",
-    "Tipus": "Valami",
-    "Price": 0
-  },
-  {
-    "ID": 6,
-    "Brand": "string",
-    "Tipus": "string",
-    "Price": 0
-  },
-  {
-    "ID": 7,
-    "Brand": "string",
-    "Tipus": "string",
-    "Price": 0
-  },
-  {
-    "ID": 8,
-    "Brand": "string",
     "Tipus": "string",
     "Price": 0
   }
